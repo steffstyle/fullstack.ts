@@ -1,0 +1,96 @@
+{
+    "name": "q-angular-express.ts",
+    "version": "0.0.1",
+    "location": "https://",
+    "description": "Fullstack web development using TypeScript and the flavors of Angular, Express, MongoDB and Bootstrap",
+    "lib": [
+        {
+            "name": "NodeJS",
+            "version": "0.0.0"
+        },
+        {
+            "name": "Angular",
+            "version": "0.0.0"
+        },
+        {
+            "name": "Express",
+            "version": "0.0.0"
+        },
+        {
+            "name": "MongoDB",
+            "version": "0.0.0"
+        },
+        {
+            "name": "Bootstrap",
+            "version": "0.0.0"
+        },
+        {
+            "name": "Mongoose",
+            "version": "0.0.0"
+        },
+        {
+            "name": "SASS",
+            "version": "0.0.0"
+        }
+    ],
+    "author": "steff",
+    "check": [
+        {
+            "name": "nodejs",
+            "version": "14.0.0",
+            "check": "node -v",
+            "install": {
+                "linux": "",
+                "windows": "",
+                "macos": ""
+            }
+        }
+    ],
+    "copy": [
+        // create project structure
+        {
+            "src": "qontent",
+            "dest": "",
+            "recursive": true // copy folder CONTENT to destination
+        },
+        // copy qomponents
+        {
+            "src": "qomponents",
+            "dest": "",
+            "recursive": false // copy folder ITSELF to destination
+        }
+    ],
+    "create": [
+        // generate angular application with angular-cli
+        {
+            "cmd": "ng",
+            "args": [
+                "new",
+                "client",
+                "--routing=true",
+                "--skip-git=true",
+                "--style=sass",
+                "--defaults=true",
+                "--strict=true"
+            ],
+            "dest": ""
+        },
+        // install server dependencies (npm modules)
+        {
+            "cmd": "npm",
+            "args": [
+                "install"
+            ],
+            "dest": "server"
+        },
+        // create client qomponents container
+        {
+            "cmd": "mkdir",
+            "args": [
+                "qomponents"
+            ],
+            "dest": "client"
+        }
+    ],
+    "configure": []
+}
